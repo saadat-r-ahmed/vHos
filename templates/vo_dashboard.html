@@ -1,0 +1,55 @@
+{% extends 'vo_base.html' %} {% block profile %}
+
+<div class="admin-profile">
+
+    <div class="card text-center">
+      <div class="card-header">
+              <h1>Logged in as VO : {{name}}</h1>
+      </div>
+      <div class="card-body">
+        <p class="card-text">A hospital to your vehicle.</p>
+        <a href="/vo_profile_edit_request" class="btn btn-outline-success" role="button" data-bs-toggle="button">Edit Profile</a>
+        <a href="/vo_logout" class="btn btn-outline-danger" role="button" data-bs-toggle="button">Log Out</a>
+      </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
+{% block operations %}
+
+<div>
+
+
+<br> <br>
+
+    <center>
+        <h1>VO Operations</h1>
+    </center>
+
+
+    <div class="admin-actions">
+        <div class="card text-center">
+          <!-- <div class="card-header">
+                  <h1>Actions</h1>
+          </div> -->
+          <div class="card-body bg-cyan">
+
+              <a href="/vo/show_services" class="btn btn-outline-info btn-lg btn-block" role="button" data-bs-toggle="button">Search & Place Regular Service Request</a> <br>
+              <br><br>
+              <a href="/regular_requests_status" class="btn btn-outline-info btn-lg btn-block" role="button" data-bs-toggle="button">All Regular Requests</a> <br>
+              <br><br>
+              <a href="/vo/emergency_request_page" class="btn btn-outline-info btn-lg btn-block" role="button" data-bs-toggle="button">Emergency Request</a> <br>
+              <br><br>
+              <a href="/emergency_requests_status" class="btn btn-outline-info btn-lg btn-block" role="button" data-bs-toggle="button">All Emergency Requests</a> <br>
+              <br><br>
+              <a href="/vo/review_asp" class="btn btn-outline-info btn-lg btn-block" role="button" data-bs-toggle="button">See Vehicle Service Status & Give Review</a> <br>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+{% endblock %}

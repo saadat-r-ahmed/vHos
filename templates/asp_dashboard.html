@@ -1,0 +1,57 @@
+{% extends 'asp_base.html' %} {% block profile %}
+
+<div class="admin-profile">
+
+    <div class="card text-center">
+      <div class="card-header">
+              <h1>Logged in as ASP : {{id}} - {{name}}</h1>
+      </div>
+      <div class="card-body">
+        <p class="card-text">Your attitude, not your aptitude, will determine your altitude.</p>
+        <a href="asp_profile_edit_request" class="btn btn-outline-success" role="button" data-bs-toggle="button">Edit Profile</a>
+        <a href="/asp_logout" class="btn btn-outline-danger" role="button" data-bs-toggle="button">Log Out</a>
+      </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
+{% block operations %}
+
+<div>
+
+
+<br> <br>
+
+    <center>
+        <h1>ASP Operations</h1>
+    </center>
+
+
+    <div class="admin-actions">
+        <div class="card text-center">
+          <!-- <div class="card-header">
+                  <h1>Actions</h1>
+          </div> -->
+          <div class="card-body bg-cyan">
+
+              <a href="/asp/add_new_services" class="btn btn-outline-info btn-lg btn-block" role="button" data-bs-toggle="button">ADD NEW SERVICE</a>
+              <br><br>
+              <a href="/asp/edit_prev_services" class="btn btn-outline-info btn-lg btn-block" role="button" data-bs-toggle="button">EDIT SERVICES</a>
+              <br><br>
+              <a href="/asp/update_status" class="btn btn-outline-info btn-lg btn-block" role="button" data-bs-toggle="button">VIEW & UPDATE STATUS</a>
+              <br><br>
+              <a href="/asp/show_requests" class="btn btn-outline-info btn-lg btn-block" role="button" data-bs-toggle="button">EMERGENCY REQUESTS AND RESPONSE</a>
+              <br><br>
+              <a href="/asp/receive_car_form" class="btn btn-outline-info btn-lg btn-block" role="button" data-bs-toggle="button">RECEIVE CAR</a>
+              <br><br>
+              <a href="/asp/show_regular_req" class="btn btn-outline-info btn-lg btn-block" role="button" data-bs-toggle="button">REGULAR REQUEST & RESPONSE</a>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+{% endblock %}

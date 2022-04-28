@@ -1,0 +1,37 @@
+{% extends 'asp_base.html' %}
+{% block operations %}
+
+
+<div class="bordered-form">
+<br> <br>
+
+    <center>
+        <h1>Receive Car</h1>
+    </center>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <form action="/rcv_car" method="POST">
+      <div class="form-group row">
+        <label for="vo_mail" class="col-4 col-form-label">VO Mail</label>
+        <div class="col-8">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa fa-address-card"></i>
+              </div>
+            </div>
+            <input id="vo_mail" name="vo_mail" type="text" class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="offset-4 col-8">
+          <button name="submit" type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </form>
+</div>
+
+
+{% endblock %}

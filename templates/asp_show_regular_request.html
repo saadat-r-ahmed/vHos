@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title> Regular Requests </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.1/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet">
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.1/bootstrap3-editable/js/bootstrap-editable.js"></script>
+    <script type="text/javascript" language="javascript">
+        $(document).ready(function() {
+            var dataTable = $('#sample_data').DataTable();
+            $('#sample_data').editable({
+                container: 'body',
+                selector: 'td.price',
+                url: '/update_service',
+                title: 'price',
+                type: 'POST',
+                validate: function(value) {
+                    if ($.trim(value) == '') {
+                        return 'This field is required';
+                    }
+                }
+            });
+
+            $('#sample_data').editable({
+                container: 'body',
+                selector: 'td.description',
+                url: '/update_service',
+                title: 'description',
+                type: 'POST',
+                validate: function(value) {
+                    if ($.trim(value) == '') {
+                        return 'This field is required';
+                    }
+                }
+            });
+        });
+
+    </script>
+    <style media="screen">
+
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0px;
+      font-family: 'segoe ui';
+    }
+
+    h1 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    display:inline-block;
+    margin: 40px 8px 10px 8px;
+    color: #000000;
+    font-family: didot;
+    }
+
+    .admin-profile{
+        padding-top:12px;
+        padding-left: 12px;
+        padding-bottom: 12px;
+        padding-right: 12px;
+    }
+
+    .admin-actions{
+        padding-top:12px;
+        padding-left: 12px;
+        padding-bottom: 12px;
+        padding-right: 12px;
+    }
+
+    .nav {
+      height: 50px;
+      width: 100%;
+      background-color: #4d4d4d;
+      position: relative;
+    }
+
+    .nav > .nav-header {
+      display: inline;
+    }
+
+    .nav > .nav-header > .nav-title {
+      display: inline-block;
+      font-size: 22px;
+      color: #fff;
+      padding: 10px 10px 10px 10px;
+    }
+
+    .nav > .nav-btn {
+      display: none;
+    }
+
+    .nav > .nav-links {
+      display: inline;
+      float: right;
+      font-size: 18px;
+    }
+
+    .nav > .nav-links > a {
+      display: inline-block;
+      padding: 13px 10px 13px 10px;
+      text-decoration: none;
+      color: #efefef;
+    }
+
+    .nav > .nav-links > a:hover {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    .nav > #nav-check {
+      display: none;
+    }
+
+    @media (max-width:600px) {
+      .nav > .nav-btn {
+        display: inline-block;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+      }
+      .nav > .nav-btn > label {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        padding: 13px;
+      }
+      .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+      .nav > .nav-btn > label > span {
+        display: block;
+        width: 25px;
+        height: 10px;
+        border-top: 2px solid #eee;
+      }
+      .nav > .nav-links {
+        position: absolute;
+        display: block;
+        width: 100%;
+        background-color: #333;
+        height: 0px;
+        transition: all 0.3s ease-in;
+        overflow-y: hidden;
+        top: 50px;
+        left: 0px;
+      }
+      .nav > .nav-links > a {
+        display: block;
+        width: 100%;
+      }
+      .nav > #nav-check:not(:checked) ~ .nav-links {
+        height: 0px;
+      }
+      .nav > #nav-check:checked ~ .nav-links {
+        height: calc(100vh - 50px);
+        overflow-y: auto;
+      }
+    }
+    </style>
+
+</head>
+
+
+
+
+<body>
+  <!-- !NAVIGATION BAR! -->
+
+        <div class="nav">
+        <input type="checkbox" id="nav-check">
+        <div class="nav-header">
+        <div class="nav-title">
+        vHos
+        </div>
+        </div>
+        <div class="nav-btn">
+        <label for="nav-check">
+        <span></span>
+        <span></span>
+        <span></span>
+        </label>
+        </div>
+      <div class="nav-links">
+          <a href="/home">Homepage</a>
+          <a href="/asp_dashboard">ASP Dashboard</a>
+          <a href="/asp">ASP</a>
+          <a href="/services">Services</a>
+          <a href="/admin">Admin</a>
+          <a href="/about_page">Abour Page</a>
+          <a href="/contact_us">Contact Us</a>
+      </div>
+        </div>
+
+
+  <!-- !NAVIGATION BAR! -->
+
+
+
+    <div class="container">
+        <h3 align="center">Regular Request Queue</h3>
+        <br />
+        <div class="panel panel-default">
+            <div class="panel-heading">DataTable</div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table id="sample_data" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Request ID</th>
+                                <th>VO ID</th>
+                                <th>Service Name</th>
+                                <th>Status</th>
+                                <th>Time Slot</th>
+                                <th>Contact</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            {% for row in cars %}
+                            <tr>
+                                <td data-pk="{{row.request_id}}">{{row.request_id}}</td>
+                                <td data-name="vo_id" class="vo_id" data-type="text" data-pk="{{row.request_id}}">{{row.vo_id}}</td>
+                                <td data-name="service_name" class="service_name" data-type="text" data-pk="{{row.request_id}}">{{row.service_name}}</td>
+                                <td data-name="status" class="status" data-type="text" data-pk="{{row.request_id}}">{{row.status}}</td>
+                                <td data-name="time_slot" class="time_slot" data-type="text" data-pk="{{row.request_id}}">{{row.time_slot}}</td>
+                                <td data-name="contact" class="contact" data-type="text" data-pk="{{row.request_id}}">{{row.contact}}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <center>
+    <h4>Fill up the fields to accept the request</h4>
+    <div class="form">
+        <form action="/asp_commit_slot"  method="POST">
+
+            <label for="request_id">Request ID</label>
+            <input type="text" id="request_id" name="request_id" required>
+
+            <label for="contact">Contact  Number</label>
+            <input type="text" id="contact" name="contact" required>
+
+            <label for="time">Time</label>
+            <input type="datetime-local" id="time" name="time" required>
+
+            <input type="submit">
+        </form>
+    </div>
+    </center>
+
+
+
+</body>
+
+</html>

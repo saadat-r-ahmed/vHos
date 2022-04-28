@@ -1,0 +1,69 @@
+{% extends 'vo_base.html' %} {% block profile %}
+
+<div class="admin-profile">
+
+    <div class="card text-center">
+      <div class="card-header">
+              <h1>Logged in as VO : {{name}}</h1>
+      </div>
+      <div class="card-body">
+        <p class="card-text">A hospital to your vehicle.</p>
+        <a href="/vo_profile_edit_request" class="btn btn-outline-success" role="button" data-bs-toggle="button">Edit Profile</a>
+        <a href="/vo_logout" class="btn btn-outline-danger" role="button" data-bs-toggle="button">Log Out</a>
+      </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
+{% block operations %}
+
+<div>
+
+
+<br> <br>
+
+    <center>
+        <h1>EDIT YOUR PROFILE</h1>
+    </center>
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<form method="POST" action="/commit_vo_update">
+  <div class="form-group row">
+    <label for="name" class="col-4 col-form-label">NAME:</label> 
+    <div class="col-8">
+      <input id="name" name="name" type="text" class="form-control">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="longitude" class="col-4 col-form-label">LONGITUDE:</label> 
+    <div class="col-8">
+      <input id="longitude" name="longitude" type="text" class="form-control">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="latitude" class="col-4 col-form-label">LATITUDE:</label> 
+    <div class="col-8">
+      <input id="latitude" name="latitude" type="text" class="form-control">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="password" class="col-4 col-form-label">PASSWORD:</label> 
+    <div class="col-8">
+      <input id="password" name="password" type="text" class="form-control">
+    </div>
+  </div> 
+  <div class="form-group row">
+    <div class="offset-4 col-8">
+      <button name="submit" type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+</form>
+
+</div>
+
+{% endblock %}

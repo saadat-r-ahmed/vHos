@@ -1,0 +1,49 @@
+{% extends 'admin_base.html' %} {% block profile %}
+
+<div class="admin-profile">
+
+    <div class="card text-center">
+      <div class="card-header">
+              <h1>Logged in as Admin : {{id}} - {{name}}</h1>
+      </div>
+      <div class="card-body">
+        <p class="card-text">With great power, comes great responsibity. Please, use it well.</p>
+        <a href="#" class="btn btn-outline-success" role="button" data-bs-toggle="button">Edit Profile</a>
+        <a href="/admin_logout" class="btn btn-outline-danger" role="button" data-bs-toggle="button">Log Out</a>
+      </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
+{% block operations %}
+
+<div>
+
+
+<br> <br>
+
+    <center>
+        <h1>Admin Operations</h1>
+    </center>
+
+
+    <div class="admin-actions">
+        <div class="card text-center">
+          <!-- <div class="card-header">
+                  <h1>Actions</h1>
+          </div> -->
+          <div class="card-body bg-cyan">
+
+              <a href="/admin_dashboard/show_all_asp" class="btn btn-outline-info btn-lg btn-block" role="button" data-bs-toggle="button">ALL ASP</a><br><br>
+              <a href="/admin_dashboard/show_all_vo" class="btn btn-outline-info btn-lg btn-block" role="button" data-bs-toggle="button">ALL VEHICLE OWNERS</a>
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+{% endblock %}
